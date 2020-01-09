@@ -7,7 +7,7 @@ async function getResults(query) {
         const recipes = res.data.recipes;
         console.log('RES!!!', recipes);
     } catch (err) {
-        alert(err)
+        alert(err);
     }
 }
 
