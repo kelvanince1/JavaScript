@@ -25,10 +25,6 @@ const controlSearch = async () => {
     }
 }
 
-const r = new Recipe(47746);
-r.getRecipe();
-console.log(r);
-
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
     controlSearch();
@@ -42,4 +38,23 @@ elements.searchResPages.addEventListener('click', e => {
         searchView.clearResults();
         searchView.renderResults(state.search.result, goToPage);
     }
-})
+});
+
+const controlRecipe = async () => {
+    const id = window.location.hash.replace('#', '');
+    
+    if (id) {
+
+        state.recipe = new Recipe(id);
+
+        await state.recipe.getRecipe();
+
+        state.recipe.calcTime();
+        state.recipe.calcServings();
+
+        console.log(state.recipe);
+
+    }
+}
+
+window.addEventListener('hashchange', controlRecipe);
