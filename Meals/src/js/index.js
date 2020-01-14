@@ -18,10 +18,15 @@ const controlSearch = async () => {
 
         renderLoader(elements.searchResult);
 
-        await state.search.getResults();
+        try {
+            await state.search.getResults();
 
-        clearLoader();
-        searchView.renderResults(state.search.result);
+            clearLoader();
+            searchView.renderResults(state.search.result);
+        } catch (err) {
+            console.log(err);
+            clearLoader();
+        }
     }
 }
 
@@ -47,14 +52,22 @@ const controlRecipe = async () => {
 
         state.recipe = new Recipe(id);
 
-        await state.recipe.getRecipe();
+        try {
+            await state.recipe.getRecipe();
 
-        state.recipe.calcTime();
-        state.recipe.calcServings();
+            state.recipe.calcTime();
+            state.recipe.calcServings();
 
-        console.log(state.recipe);
+            console.log(state.recipe);
+        } catch (err) {
+            console.log(err);
+        }
 
     }
 }
 
 window.addEventListener('hashchange', controlRecipe);
+window.addEventListener('load', controlRecipe);
+
+// These two lines of code can be broken down into the following one:
+// ['haschange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
