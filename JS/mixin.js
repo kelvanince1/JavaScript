@@ -40,7 +40,7 @@ const flyFactory = function(obj) {
         isFlying() {
             return isFlying;
         }
-    })
+    });
 }
  
 const superman = humanFactory(flyFactory({}));
