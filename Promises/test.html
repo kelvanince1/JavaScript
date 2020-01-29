@@ -84,21 +84,37 @@
                 });
             };
 
-            getIDs
-                .then(ids => {
-                    console.log(ids);
-                    return getRecipe(ids[2]);
-                })
-                .then(recipe => {
-                    console.log(recipe);
-                    return getRelated('Kelvan');
-                })
-                .then(recipe => {
-                    console.log(recipe);
-                })
-                .catch(error => {
-                    console.log('Error');
-                });
+            // getIDs
+            //     .then(ids => {
+            //         console.log(ids);
+            //         return getRecipe(ids[2]);
+            //     })
+            //     .then(recipe => {
+            //         console.log(recipe);
+            //         return getRelated('Kelvan');
+            //     })
+            //     .then(recipe => {
+            //         console.log(recipe);
+            //     })
+            //     .catch(error => {
+            //         console.log('Error');
+            //     });
+
+            async function getRecipesAw() {
+                const ids = await getIDs;
+                console.log(ids);
+
+                const recipe = await getRecipe(ids[1]);
+                console.log(recipe);
+
+                const related = await getRelated('Kelvan');
+                console.log(related);
+
+                return recipe;
+            }
+
+            getRecipesAw()
+                .then(res => console.log(res));
         </script>
     </body>
 </html>
