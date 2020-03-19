@@ -2,6 +2,7 @@ const board = document.getElementById('board');
 const cellElements = document.querySelectorAll('[data-cell');
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]');
 const winningMessageElement = document.getElementById('winning-message');
+const restartButton = document.getElementById('restart-button');
 const X_CLASS = 'x';
 const CIRCLE_CLASS = 'circle';
 
@@ -18,14 +19,23 @@ const WINNING_COMBONATIONS = [
 
 let circleTurn;
 
-(function startGame() {
+startGame();
+
+function startGame() {
     circleTurn = false;
     cellElements.forEach(cell => {
+        cell.classList.remove(X_CLASS);
+        cell.classList.remove(CIRCLE_CLASS);
+        cell.removeEventListener('click', handleClick);
         cell.addEventListener('click', handleClick, { once: true });
     });
 
     setBoardHoverClass();
-})();
+    winningMessageElement.classList.remove('show');
+};
+
+
+restartButton.addEventListener('click', startGame);
 
 function handleClick(e) {
     const cell = e.target;
@@ -39,7 +49,7 @@ function handleClick(e) {
     } else if (isDraw()) {
         endGame(true);
     }
-    
+
     // Switch suit
     swapTurns();
 
