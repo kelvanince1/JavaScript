@@ -1,5 +1,5 @@
 const draggables = document.querySelectorAll('.draggable');
-const container = document.querySelectorAll('.container');
+const containers = document.querySelectorAll('.container');
 
 draggables.forEach(draggable => {
     draggable.addEventListener('dragstart', () => {
@@ -7,6 +7,18 @@ draggables.forEach(draggable => {
     });
 
     draggable.addEventListener('dragend', () => {
-        draggable.classList.remoove('dragging');
+        draggable.classList.remove('dragging');
     });
 });
+
+containers.forEach(container => {
+    container.addEventListener('dragover', e => {
+        e.preventDefault();
+        const draggable = document.querySelector('.dragging');
+        container.appendChild(draggable);
+    });
+});
+
+// function getDragAfterElement(container, y) {
+    
+// }
