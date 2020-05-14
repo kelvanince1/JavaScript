@@ -12,10 +12,15 @@
     <header class="header">
         <h3 class="header--text">Own The Night..</h3>
         <div class="header-video">
-            <video class="header-video__content" autoplay muted loop>
+            <video class="header-video__content" id="header-video__content" autoplay muted loop>
                 <source src="assets/couple.mp4" type="video/mp4">
                 Your browser is not supported
             </video>
+            <ul class="video--navigation">
+                <li><img onClick="playVideo('assets/girl.mp4')" src="assets/thumb1.png" /></li>
+                <li><img onClick="playVideo('assets/couple.mp4')" src="assets/thumb2.png" /></li>
+                <li><img onClick="playVideo('assets/guy.mp4')" src="assets/thumb3.png" /></li>
+            </ul>
         </div>
     </header>
     <div class="popular--items">
@@ -38,5 +43,7 @@
     <footer class="footer">
 
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
