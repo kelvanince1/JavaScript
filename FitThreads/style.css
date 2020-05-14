@@ -1,0 +1,48 @@
+*, html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    height: 570px;
+    width: 100%;
+    position: relative;
+}
+
+@keyframes animate {
+    100% {
+        color: #00b3ff;
+        filter: blur(2px);
+    }
+}
+
+.header--text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: 'Pacifico', cursive;
+
+    animation: animate 4s linear infinite;
+}
+
+.header-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    overflow: hidden;
+    filter:opacity(20%);
+}
+
+.header-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
