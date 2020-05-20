@@ -1,0 +1,12 @@
+.bar-container {
+    width: 200px;
+    height: 30px;
+    margin: 40px;
+    background-color: grey;
+}
+
+.bar {
+    background-color:rgb(209, 43, 134);
+    height: 100%;
+    width: 10%;
+}
