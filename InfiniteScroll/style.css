@@ -1,0 +1,41 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 400px;
+    width: 400px;
+    background-color: bisque;
+    border: 4px solid black;
+}
+
+.list {
+    list-style: none;
+    height: 350px;
+    width: 350px;
+
+    overflow-y: auto;
+}
+
+.list--item {
+    font-size: 2rem;
+    padding: 2px 5px;
+    margin: 1px 5px;
+}
