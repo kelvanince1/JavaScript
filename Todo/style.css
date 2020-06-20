@@ -113,7 +113,9 @@ form {
 }
 
 .active-list {
-    font-weight: 700;
+    color: white;
+    font-size: 2rem;
+    font-weight: 900;
 }
 
 .todo-list {
