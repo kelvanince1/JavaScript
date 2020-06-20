@@ -2,6 +2,7 @@
     --color-primary: #F432E2;
     --color-light: rgb(227, 230, 233);
     --color-dark: rgb(50, 52, 54);
+    --color-warning: rgb(228, 24, 9);
 }
 
 *,
@@ -85,6 +86,7 @@ form {
     border-bottom: 1px solid currentColor;
     font-size: inherit;
     outline: none;
+    padding: 0.25em;
 
     transition: border-bottom 150ms ease-in;
     order: 2;
@@ -94,12 +96,20 @@ form {
     border-bottom-width: 3px;
 }
 
+.new::placeholder {
+    opacity: 0.4;
+}
+
 .new:focus::placeholder {
     opacity: 0.2;
 }
 
 .new.list {
     font-size: 1.1rem;
+}
+
+.new.task {
+    margin-bottom: 0;
 }
 
 .active-list {
@@ -133,7 +143,12 @@ form {
 }
 
 .todo-body {
+    position: relative;
     padding: var(--spacer);
+}
+
+.new-task-creator .create {
+    color: var(--color-primary);
 }
 
 [type="checkbox"] {
@@ -201,8 +216,34 @@ form {
     height: 3px;
     background: currentColor;
     transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 150ms ease-in-out;
 }
 
 [type="checkbox"]:checked + label::after {
     transform: scaleX(1);
+    transform-origin: left;
+}
+
+.delete-tasks {
+    display: flex;
+    justify-content: space-evenly;
+    
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -35px;
+    color: var(--color-light);
+}
+
+.btn.delete {
+    /* font-weight: 700;
+    letter-spacing: 1px; */
+    opacity: 0.7;
+    font-size: 1rem;
+    transition: color 200ms;
+}
+
+.btn.delete:hover {
+    color: var(--color-warning);
 }
