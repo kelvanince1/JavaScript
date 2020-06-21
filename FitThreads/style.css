@@ -89,3 +89,23 @@
 .video--navigation li img:hover {
     width: 200px;
 }
+
+.popular--items {
+    height: 570px;
+    width: 100%;
+    position: relative;
+}
+
+.popular--checkbox {
+    position: absolute;
+    left: 10%;
+    top: 15%;
+
+    width: 120px;
+    height: 40px;
+    -webkit-appearance: none;
+    background: linear-gradient(90deg, #ce29d6 28%, #00d4ff 100%);
+    outline: none;
+    border-radius: 20px;
+    box-shadow: 0 0 0 4px #ce29d6, 0 0 0 4px #00d4ff, inset 0 0 10px rgba(0,0,0,1);
+}
