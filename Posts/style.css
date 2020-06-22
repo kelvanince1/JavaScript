@@ -1,0 +1,43 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    height: 150vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.posts {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+    height: 600px;
+    width: 600px;
+    background-color: bisque;
+    border: 4px solid black;
+
+    overflow-y: auto;
+}
+
+.btn {
+    margin: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.item {
+    font-size: 3rem;
+    padding: 2px 5px;
+    margin: 3px 8px;
+}
